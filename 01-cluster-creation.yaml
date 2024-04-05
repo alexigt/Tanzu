@@ -1,0 +1,25 @@
+apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: shared-service-cluster
+  namespace: lab
+spec:
+  topology:
+    controlPlane:
+      replicas: 3
+      vmClass: k8s-master
+      storageClass: kubernetes-storage-policy
+      tkr:
+        reference:
+          name: v1.23.8---vmware.3-tkg.1.ubuntu
+    nodePools:
+    - name: worker-nodepool
+      replicas: 3
+      vmClass: k8s-worker
+      storageClass: kubernetes-storage-policy
+      tkr:
+        reference:
+          name: v1.23.8---vmware.3-tkg.1.ubuntu
+  settings:
+    storage:
+      defaultClass: kubernetes-storage-policy

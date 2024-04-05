@@ -1,0 +1,25 @@
+apiVersion: v1
+items:
+- apiVersion: run.tanzu.vmware.com/v1alpha2
+  kind: TkgServiceConfiguration
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"run.tanzu.vmware.com/v1alpha2","kind":"TkgServiceConfiguration","metadata":{"annotations":{},"name":"tkg-service-configuration"},"spec":{"defaultCNI":"antrea"}}
+    creationTimestamp: "2024-04-04T15:34:28Z"
+    generation: 1
+    name: tkg-service-configuration
+    resourceVersion: "2598"
+    selfLink: /apis/run.tanzu.vmware.com/v1alpha2/tkgserviceconfigurations/tkg-service-configuration
+    uid: 6e1eb122-65d5-401d-a5e1-8792232b55c6
+  spec:
+    defaultCNI: antrea
+    proxy:
+      httpProxy: http://10.75.148.17:3128
+      httpsProxy: http://10.75.148.17:3128
+      noProxy:
+      - localhost,127.0.0.1,.ourtde.com,172.19.220.128/25,10.141.247.0/26,10.141.247.64/26,10.141.247.128/26,svc,default,local,cluster.local,192.168.0.0/16,172.16.0.0/12,10.0.0.0/8
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
